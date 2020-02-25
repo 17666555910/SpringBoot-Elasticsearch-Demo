@@ -20,21 +20,29 @@ import java.util.ArrayList;
 public class StandardResult {
 
 
-    // 响应业务状态
+    /**
+     * 响应业务状态
+     */
     @ApiModelProperty(value = "响应业务状态")
     private boolean state;
 
-    // 响应消息
+    /**
+     * 响应消息
+     */
     @ApiModelProperty(value = "响应消息")
     private String msg;
 
-    // 响应中的数据
+    /**
+     * 响应中的数据
+     */
     @ApiModelProperty(value = "响应中的数据")
     private Object data;
 
-    // 响应状态码
+    /**
+     * 响应状态码    200 响应成功    201缺少参数    0响应失败
+     */
     @ApiModelProperty(value = "响应状态码  200 响应成功   500响应失败")
-    private int code;//200 响应成功    201缺少参数    0响应失败
+    private int code;
 
     /**
      * 错误栈信息
