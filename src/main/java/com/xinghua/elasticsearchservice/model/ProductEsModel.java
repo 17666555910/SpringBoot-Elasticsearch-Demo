@@ -1,5 +1,6 @@
 package com.xinghua.elasticsearchservice.model;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,48 +18,52 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
  * @Date 2020/2/24 16:13
  **/
 
-/**
- *
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(indexName = "user", type = "user")
-public class UserModel {
+@Document(indexName = "product", type = "product")
+public class ProductEsModel {
     @Id
     private String id;
 
     /**
      * 名称
      */
+    @ApiModelProperty(value = "名称")
     @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
-    private String name;
+    private String title;
 
     /**
-     * 手机号
+     * 价格
      */
-    private Integer phone;
+    @ApiModelProperty(value = "价格")
+    private Double price;
 
     /**
-     * 年龄
+     * 产地
      */
-    private Integer age;
-
-    /**
-     * 部门id
-     */
-    private String deptId;
-
-    /**
-     * 部门名称
-     */
-    //@Field(type = FieldType.Keyword)
+    @ApiModelProperty(value = "产地")
     @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
-    private String deptName;
+    private String origin;
 
     /**
-     * 居住地址
+     * 品牌ID
      */
+    @ApiModelProperty(value = "品牌ID")
+    @Field(type = FieldType.Keyword)
+    private String brandId;
+
+    /**
+     * 品牌名称
+     */
+    @ApiModelProperty(value = "品牌名称")
+    @Field(type = FieldType.Keyword)
+    private String brandName;
+
+    /**
+     * 关键字
+     */
+    @ApiModelProperty(value = "关键字")
     @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
-    private String address;
+    private String keyword;
 }
