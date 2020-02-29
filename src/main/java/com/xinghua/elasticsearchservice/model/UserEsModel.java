@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
@@ -22,47 +21,39 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(indexName = "product", type = "product")
-public class ProductEsModel extends EntityEsModel {
+@Document(indexName = "user", type = "user")
+public class UserEsModel extends EntityEsModel {
 
     /**
      * 名称
      */
     @ApiModelProperty(value = "名称")
     @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
-    private String title;
+    private String name;
 
     /**
-     * 价格
+     * 年龄
      */
-    @ApiModelProperty(value = "价格")
-    private Double price;
+    @ApiModelProperty(value = "年龄")
+    private Integer age;
 
     /**
-     * 产地
+     * 居住地址
      */
-    @ApiModelProperty(value = "产地")
+    @ApiModelProperty(value = "居住地址")
     @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
-    private String origin;
+    private String address;
 
     /**
-     * 品牌ID
+     * 手机
      */
-    @ApiModelProperty(value = "品牌ID")
+    @ApiModelProperty(value = "手机")
     @Field(type = FieldType.Keyword)
-    private String brandId;
+    private String mobile;
 
     /**
-     * 品牌名称
+     * 性别   1:男  2:女
      */
-    @ApiModelProperty(value = "品牌名称")
-    @Field(type = FieldType.Keyword)
-    private String brandName;
-
-    /**
-     * 关键字
-     */
-    @ApiModelProperty(value = "关键字")
-    @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
-    private String keyword;
+    @ApiModelProperty(value = "性别   1:男  2:女")
+    private String sex;
 }
