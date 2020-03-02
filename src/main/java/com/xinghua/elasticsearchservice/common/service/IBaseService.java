@@ -19,14 +19,14 @@ import java.util.List;
 public interface IBaseService<T extends EntityEsModel> {
 
     /**
-     * 获取ES索引名词
+     * 获取ES索引名称
      *
      * @return
      */
     String getIndexName();
 
     /**
-     * 获取ES 索引类型
+     * 获取ES索引类型
      *
      * @return
      */
@@ -67,7 +67,7 @@ public interface IBaseService<T extends EntityEsModel> {
     String saveOrUpdate(T entityModel);
 
     /**
-     * 删除
+     * 删除entity
      *
      * @param id
      * @return
