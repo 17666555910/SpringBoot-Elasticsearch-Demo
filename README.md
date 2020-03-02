@@ -1,5 +1,7 @@
 # SpringBoot-Elasticsearch-Demo
 
+https://blog.csdn.net/a767815662/article/details/104128170
+
 ### 1、项目文档结构： 
 本项目是基于SpringBoot 2.1.3 版本进行开发的,采用的是 Spring Data Elasticsearch。
 
