@@ -1,6 +1,7 @@
 package com.xinghua.elasticsearchservice.model;
 
 import com.xinghua.elasticsearchservice.common.model.EntityEsModel;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel(value = "用户ES对象")
 @Document(indexName = "user", type = "user")
 public class UserEsModel extends EntityEsModel {
 

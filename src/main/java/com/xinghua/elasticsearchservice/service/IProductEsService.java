@@ -2,6 +2,8 @@ package com.xinghua.elasticsearchservice.service;
 
 import com.xinghua.elasticsearchservice.common.service.IBaseService;
 import com.xinghua.elasticsearchservice.model.ProductEsModel;
+import org.elasticsearch.search.aggregations.Aggregations;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 
 /**
  * @Description product接口层

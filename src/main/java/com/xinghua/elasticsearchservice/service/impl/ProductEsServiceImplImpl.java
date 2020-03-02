@@ -4,8 +4,10 @@ import com.xinghua.elasticsearchservice.common.service.impl.BaseServiceImpl;
 import com.xinghua.elasticsearchservice.model.ProductEsModel;
 import com.xinghua.elasticsearchservice.service.IProductEsService;
 import lombok.extern.slf4j.Slf4j;
+import org.elasticsearch.search.aggregations.Aggregations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 
 /**

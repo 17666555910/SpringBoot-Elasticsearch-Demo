@@ -1,6 +1,7 @@
 package com.xinghua.elasticsearchservice.model;
 
 import com.xinghua.elasticsearchservice.common.model.EntityEsModel;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel(value = "商品ES对象")
 @Document(indexName = "product", type = "product")
 public class ProductEsModel extends EntityEsModel {
 
@@ -29,7 +31,7 @@ public class ProductEsModel extends EntityEsModel {
      * 名称
      */
     @ApiModelProperty(value = "名称")
-    @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
+    @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word", type = FieldType.Text)
     private String title;
 
     /**
@@ -42,7 +44,7 @@ public class ProductEsModel extends EntityEsModel {
      * 产地
      */
     @ApiModelProperty(value = "产地")
-    @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
+    @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word", type = FieldType.Text)
     private String origin;
 
     /**
@@ -63,6 +65,29 @@ public class ProductEsModel extends EntityEsModel {
      * 关键字
      */
     @ApiModelProperty(value = "关键字")
-    @Field(analyzer = "ik_smart", searchAnalyzer = "ik_smart", type = FieldType.Text)
+    @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word", type = FieldType.Text)
     private String keyword;
+
+    public ProductEsModel(String id, String title, Double price, String origin, String brandId, String brandName, String keyword) {
+        super(id);
+        this.title = title;
+        this.price = price;
+        this.origin = origin;
+        this.brandId = brandId;
+        this.brandName = brandName;
+        this.keyword = keyword;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductEsModel{" +
+                "title='" + title + '\'' +
+                ", id=" + super.getId() +
+                ", price=" + price +
+                ", origin='" + origin + '\'' +
+                ", brandId='" + brandId + '\'' +
+                ", brandName='" + brandName + '\'' +
+                ", keyword='" + keyword + '\'' +
+                '}';
+    }
 }

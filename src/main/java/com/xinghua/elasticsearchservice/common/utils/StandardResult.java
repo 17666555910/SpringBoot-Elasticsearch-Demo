@@ -6,6 +6,7 @@ import com.xinghua.elasticsearchservice.common.dto.ExceptionDTO;
 import com.xinghua.elasticsearchservice.constans.Constants;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.ToString;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
  * @Description 自定义响应结构
  * @Date 2020/2/24 16:13
  */
+@ToString
 @ApiModel(value = "StandardResult", description = "标准自定义响应结构")
 public class StandardResult {
 
